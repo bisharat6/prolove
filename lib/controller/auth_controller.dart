@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:prolovelove/model/user_model.dart';
 import 'package:prolovelove/view/edit_profile_form.dart';
+import 'package:prolovelove/view/welcomescreen.dart';
 import '../component/alertboxes.dart';
 import '../component/api_url.dart';
 import '../component/globalvariables.dart';
@@ -55,6 +56,22 @@ class AuthController extends GetxController {
           print(responseData["data"]["professional_id"]);
           if (responseData["data"]["role_id"] == "profession") {
             onUserLogin(userId.toString(), USERNAME.toString());
+            // var userLoginData = UserModel(
+            //   id: responseData["data"]["id"],
+            //   firstName: responseData["data"]["first_name"],
+            //   lastName: responseData["data"]["last_name"],
+            //   age: responseData["data"]["age"].toString(),
+            //   gender: responseData["data"]["gender"],
+            //   email: responseData["data"]["email"],
+            //   profileImage: responseData["data"]["profile"],
+            //   professionalId: responseData["data"]["professional_id"],
+            //   description: responseData["data"]["about"],
+            //   isLogin: RxInt(responseData["data"]["is_login"] ?? 0),
+            //   createdAt: responseData["data"]["created_at"],
+            //   updatedAt: responseData["data"]["updated_at"],
+            // );
+            // Get.to(RegisterFaceLock(userData: userLoginData));
+
             Get.to(EditProfileForm(
               userData: UserModel(
                 id: responseData["data"]["id"],
@@ -111,7 +128,7 @@ class AuthController extends GetxController {
           showInSnackBar(
             responseData["message"],
           );
-          Get.to(LoginScreen());
+          Get.to(WelcomeScreen());
         } else {
           showInSnackBar(responseData["message"], color: Colors.red);
         }

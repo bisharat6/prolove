@@ -38,77 +38,77 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Scaffold(
           backgroundColor: Colors.white,
           body: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  vertical(8),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Image.asset(
-                      AppImages.logo_Icon,
-                      height: Get.height * 0.08,
+              padding: const EdgeInsets.all(20.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    vertical(8),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Image.asset(
+                        AppImages.logo_Icon,
+                        height: Get.height * 0.08,
+                      ),
                     ),
-                  ),
-                  Image.asset(
-                    AppImages.world_Icon,
-                    height: Get.height * 0.28,
-                  ),
+                    Image.asset(
+                      AppImages.world_Icon,
+                      height: Get.height * 0.28,
+                    ),
 
-                  boldtext(
-                    AppColors.black,
-                    28,
-                    "Log In Now",
-                  ),
-                  vertical(10),
-                  lighttext(AppColors.black, 12, "Are you here for"),
-                  lighttext(
-                      AppColors.black, 12, "yourself or for your friend?"),
-                  vertical(25),
-                  // ? Padding(
-                  //     padding: const EdgeInsets.only(top: 15.0),
-                  //     child: CircularProgressIndicator(),
-                  //   )
-                  // :
-                  CustomTextFiled(emailController, "Email"),
-                  vertical(10),
-                  CustomTextFiled(passController, "Password"),
+                    boldtext(
+                      AppColors.black,
+                      28,
+                      "Log In Now",
+                    ),
+                    vertical(10),
+                    lighttext(AppColors.black, 12, "Are you here for"),
+                    lighttext(
+                        AppColors.black, 12, "yourself or for your friend?"),
+                    vertical(25),
+                    // ? Padding(
+                    //     padding: const EdgeInsets.only(top: 15.0),
+                    //     child: CircularProgressIndicator(),
+                    //   )
+                    // :
+                    CustomTextFiled(emailController, "Email"),
+                    vertical(10),
+                    CustomTextFiled(passController, "Password"),
 
-                  Padding(
-                    padding: const EdgeInsets.only(right: 50),
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Get.to(() => const verifyemail());
-                        },
-                        child: const Text(
-                          'Forget Password',
-                          style: TextStyle(fontSize: 12),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 50),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Get.to(() => const verifyemail());
+                          },
+                          child: const Text(
+                            'Forget Password',
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ),
                       ),
                     ),
-                  ),
 
-                  vertical(20),
-                  buttonMain(0.55, "Log In", () {
-                    if (emailController.text.isEmpty) {
-                      showInSnackBar('Please Enter Email', color: Colors.red);
-                    } else if (passController.text.isEmpty) {
-                      showInSnackBar('Please Enter Password',
-                          color: Colors.red);
-                    } else {
-                      authController.loginWithEmail(emailController.text,
-                          passController.text, widget.fcmToken.toString());
-                    }
-                  }),
-                  socialLoginButton("Don`t have an account ? ", "Sign up", () {
-                    Get.to(() => const RegisterScreen());
-                  }),
-                ],
-              ),
-            ),
-          ),
+                    vertical(20),
+                    buttonMain(0.55, "Log In", () {
+                      if (emailController.text.isEmpty) {
+                        showInSnackBar('Please Enter Email', color: Colors.red);
+                      } else if (passController.text.isEmpty) {
+                        showInSnackBar('Please Enter Password',
+                            color: Colors.red);
+                      } else {
+                        authController.loginWithEmail(emailController.text,
+                            passController.text, widget.fcmToken.toString());
+                      }
+                    }),
+                    socialLoginButton("Don`t have an account ? ", "Sign up",
+                        () {
+                      Get.to(() => const RegisterScreen());
+                    }),
+                  ],
+                ),
+              )),
         ),
       ),
     );

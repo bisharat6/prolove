@@ -5,7 +5,9 @@ import '../component/globalvariables.dart';
 import '../helper/const_text.dart';
 import '../helper/spacer.dart';
 import '../view/call/calling_service.dart';
+import '../view/facelock/db/databse_helper.dart';
 import '../view/login_screen.dart';
+import '../view/welcomescreen.dart';
 
 // imagePreviewAlert(List<String> images) {
 //   Get.dialog(ImagePreviewList(images: images));
@@ -141,9 +143,11 @@ showLogoutPopup() {
               horizental(20),
               GestureDetector(
                 onTap: () {
+                  DatabaseHelper _dataBaseHelper = DatabaseHelper.instance;
+                  _dataBaseHelper.deleteAll();
                   onUserLogout();
                   appStorage.erase();
-                  Get.to(LoginScreen());
+                  Get.to(WelcomeScreen());
                 },
                 child: Card(
                   elevation: 15,

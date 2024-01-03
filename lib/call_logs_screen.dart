@@ -183,7 +183,7 @@ class _CallLogsScreenState extends State<CallLogsScreen> {
                                                         'received call ${item.timeDuration} minutes',
                                                         style: const TextStyle(
                                                           color: Colors.green,
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -193,7 +193,7 @@ class _CallLogsScreenState extends State<CallLogsScreen> {
                                                         formattedDate,
                                                         style: const TextStyle(
                                                           color: Colors.green,
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -207,7 +207,7 @@ class _CallLogsScreenState extends State<CallLogsScreen> {
                                                         'missed call ${item.timeDuration} minutes',
                                                         style: const TextStyle(
                                                           color: Colors.red,
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -217,7 +217,7 @@ class _CallLogsScreenState extends State<CallLogsScreen> {
                                                         formattedDate,
                                                         style: const TextStyle(
                                                           color: Colors.red,
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -241,7 +241,7 @@ class _CallLogsScreenState extends State<CallLogsScreen> {
                                                         formattedDate,
                                                         style: const TextStyle(
                                                           color: Colors.blue,
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),

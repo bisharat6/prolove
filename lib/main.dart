@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'component/snackbar.dart';
+import 'view/facelock/locator.dart';
 import 'view/welcomescreen.dart';
 
 @pragma('vm:entry-point')
@@ -18,6 +19,7 @@ Future<void> backgroundHandler(RemoteMessage message) async {
 final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   await GetStorage.init();
+  setupServices();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
@@ -46,9 +48,8 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.latoTextTheme(
             Theme.of(context).textTheme,
           )),
-      // home: UserMainScreen(),
-
-      home: const WelcomeScreen(),
+      home: WelcomeScreen(),
+      // home: const WelcomeScreen(),
     );
   }
 }

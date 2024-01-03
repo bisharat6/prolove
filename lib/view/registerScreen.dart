@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prolovelove/controller/auth_controller.dart';
+import 'package:prolovelove/view/welcomescreen.dart';
 import '../../helper/assets.dart';
 import '../../helper/button.dart';
 import '../../helper/colors.dart';
@@ -167,7 +168,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                 }),
                 socialLoginButton("Already have an account ?", "Log In", () {
-                  Get.to(() => LoginScreen());
+                  Get.to(() => WelcomeScreen());
                 }),
               ],
             ),

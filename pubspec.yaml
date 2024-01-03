@@ -61,6 +61,15 @@ dependencies:
   zego_uikit_signaling_plugin: ^2.6.2
   zego_express_engine: ^3.11.0
   firebase_messaging: ^14.7.9
+  # local_auth: ^2.1.7
+  camera: ^0.9.4+19
+  get_it: ^7.6.4
+  google_ml_kit: ^0.13.0
+  tflite_flutter: ^0.9.0
+  image: ^3.0.2
+  sqflite: ^2.0.2
+  path_provider: ^2.0.9
+  path: ^1.8.0
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +96,7 @@ flutter:
   assets:
     - assets/images/icons/
     - assets/images/pic/
+    - assets/mobilefacenet.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
